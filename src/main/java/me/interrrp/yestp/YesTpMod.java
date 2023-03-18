@@ -1,6 +1,8 @@
 package me.interrrp.yestp;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,5 +21,17 @@ public class YesTpMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
+
+		registerClientCommandRegistrationCallback();
+	}
+
+	/**
+	 * Register the client command registration callback, where commands will
+	 * get registered.
+	 */
+	private void registerClientCommandRegistrationCallback() {
+		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
+			YesTpCommand.register(dispatcher);
+		});
 	}
 }
