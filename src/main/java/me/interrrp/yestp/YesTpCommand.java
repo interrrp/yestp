@@ -3,6 +3,7 @@ package me.interrrp.yestp;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 
+import me.interrrp.yestp.teleport.Teleport;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
 import static dev.xpple.clientarguments.arguments.CBlockPosArgumentType.*;
@@ -31,6 +32,7 @@ public class YesTpCommand {
      * @return Whether the command finished successfully.
      */
     public static int handleTeleport(CommandContext<FabricClientCommandSource> ctx) {
+        Teleport.teleportTo(getCBlockPos(ctx, "target"));
         return 1;
     }
 }
