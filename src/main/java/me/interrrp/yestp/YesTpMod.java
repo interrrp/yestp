@@ -29,7 +29,7 @@ public class YesTpMod implements ModInitializer {
 	 * Register the client command registration callback, where commands will
 	 * get registered.
 	 */
-	private void registerClientCommandRegistrationCallback() {
+	private static void registerClientCommandRegistrationCallback() {
 		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
 			YesTpCommand.register(dispatcher);
 		});
