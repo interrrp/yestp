@@ -20,9 +20,12 @@ public class YesTpMod implements ModInitializer {
 	 */
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initializing...");
 
+		LOGGER.info("Registering client command registration callback");
 		registerClientCommandRegistrationCallback();
+
+		LOGGER.info("Initialized!");
 	}
 
 	/**
